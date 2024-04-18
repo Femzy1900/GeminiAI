@@ -21,7 +21,7 @@ const Main = () => {
             </div>
             <div className="card">
                 <p>Briefly summarize thsi concept: urban planning</p>
-                <img src={assets.bulb_icon_icon} alt="" />
+                <img src={assets.bulb_icon} alt="" />
             </div>
             <div className="card">
                 <p>Brainstorm team bonding activities for our work retreat</p>
