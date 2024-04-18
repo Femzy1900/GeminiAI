@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import runChat from "../config/gemini";
 
-const Context = createContext();
+export const Context = createContext();
 
 const ContextProvider = (props) => {
 
@@ -10,10 +10,23 @@ const ContextProvider = (props) => {
     const [prevPrompts, setPrevPrompts] = useState([]);
     const [showResult, setShowResult] = useState(false);
     const [loading, setLoading] = useState(false);
-    const [resultData, setResultData] = useState("")
+    const [resultData, setResultData] = useState("");
+
+    const delayPara = () => {
+        
+    }
 
     const onSent = async (prompt) => {
-        await runChat(prompt)
+
+        setResultData("")
+        setLoading(true)
+        setShowResult(true)
+        setRecentPrompt(input)
+        const response = await runChat(input)
+        setResultData(response)
+        setLoading(false)
+        setInput("")
+
     }
 
    
